@@ -1,3 +1,10 @@
+<?php
+session_start();//démarrer session
+var_dump($_SESSION);
+
+?>
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,8 +15,8 @@
 <body>
 
 <div class="container d-flex flex-column align-items-center justify-content-center">
-    <h1>Bravo</h1>
-    <a href="index.php">Déconnexion</a>
+    <h1>Bravo </h1>
+    <a href="logout.php">Déconnexion</a>
 </div>
 </body>
 </html>

@@ -1,5 +1,7 @@
 <?php
 
+session_start();//démarrer session
+
 $users = [
     "luc"=> "motDePasseDeLuc4",
     "michel"=> "pasteque",
@@ -18,7 +20,10 @@ if(!empty($_POST["pswd"])){
     $pswd = $_POST["pswd"];
 }
 if($name && $pswd && $users[$name] && $users[$name] == $pswd){
+    $_SESSION['user'] = $name;
     header("location: resultats.php");
+}else{
+    header("location: index.php");
 }
 //
 //les bons utilisateurs et mot de passe
@@ -28,5 +33,5 @@ if($name && $pswd && $users[$name] && $users[$name] == $pswd){
 //elle a un bouton déconnexion (retour accueil)
 
 ?>
-<a href="index.php">ddeconnexion</a>
+
 
